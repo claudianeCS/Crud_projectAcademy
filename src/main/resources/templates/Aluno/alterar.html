@@ -42,7 +42,7 @@
 					<select class="form-control" th:field="*{curso}">
 					<!-- interacao com forEach, depois pega o value dessa variavel iterada e mostra no th:text-->
 					
-						<option th:each="curso : ${T(com.Academy.project.enums.Curso).values()}" th:value="${curso}" th:text="${curso}"></option> 
+						<option th:each="curso : ${T(com.project.academy.enums.Curso).values()}" th:value="${curso}" th:text="${curso}"></option>
 						
 					</select>
 				</div>
@@ -66,7 +66,7 @@
 					<select class="form-control" th:field="*{status}">
 					<!-- interacao com forEach, depois pega o value dessa variavel iterada e mostra no th:text-->
 					
-						<option th:each="status : ${T(com.Academy.project.enums.Status).values()}" th:value="${status}" th:text="${status}"></option> 
+						<option th:each="status : ${T(com.project.academy.enums.Status).values()}" th:value="${status}" th:text="${status}"></option>
 						
 					</select>
 				</div>
