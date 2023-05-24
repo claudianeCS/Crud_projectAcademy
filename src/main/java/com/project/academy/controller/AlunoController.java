@@ -16,7 +16,7 @@ public class AlunoController {
     @GetMapping("inserirAluno")
     public ModelAndView inserirAluno(Aluno aluno){
         ModelAndView mv = new ModelAndView();
-        mv.setViewName("aluno/formAluno");
+        mv.setViewName("Aluno/formAluno");
         //enviar o objeto Aluno para a view
         mv.addObject("aluno", new Aluno()); //atributoName , atributoValue : nome e valor que serao repassados na view de acordo com a operação
         return mv;
@@ -34,7 +34,7 @@ public class AlunoController {
     @GetMapping("alunos")
     public ModelAndView listagemAlunos() {
         ModelAndView mv = new ModelAndView();
-        mv.setViewName("aluno/listAlunos");
+        mv.setViewName("Aluno/listAlunos");
         mv.addObject("alunosList", alunoRepository.findAll()); // vai achar todos os dados contentes na tabela atraves do repositorio e colocar em alunosList
         return mv;
     }
@@ -43,7 +43,7 @@ public class AlunoController {
     @GetMapping("/alterar/{id}")
     public ModelAndView alterar(@PathVariable("id")Integer id) {
         ModelAndView mv = new ModelAndView();
-        mv.setViewName("aluno/alterar");
+        mv.setViewName("Aluno/alterar");
         Aluno aluno = alunoRepository.getOne(id); //reponsavel por pegar o id
         mv.addObject("aluno", aluno);
         return mv;
@@ -67,7 +67,15 @@ public class AlunoController {
     @GetMapping("filtrarAlunos")
     public ModelAndView filtroAluno(){
         ModelAndView mv = new ModelAndView();
-        mv.setViewName("aluno/filtroAlunos");
+        mv.setViewName("Aluno/filtroAlunos");
+        return mv;
+    }
+
+    @GetMapping("alunosAtivos")
+    public ModelAndView listaAtivos() {
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("Aluno/alunosListados");
+        mv.addObject("alunosAtivos", alunoRepository.findByStatusAtivo()); // vai achar todos os dados contentes na tabela atraves do repositorio e colocar em alunosList
         return mv;
     }
 }
