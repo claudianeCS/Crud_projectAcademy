@@ -20,13 +20,37 @@
                 <button class="btn button-28">CADASTRAR ALUNO</button>
             </div>
             <div class="wm">
-                <button class="btn button-28">PESQUISAR ALUNO</button>
+                <button class="btn button-28" data-toggle="modal" data-target="#modalPesquisa">PESQUISAR ALUNO</button>
             </div>
 
             <div class="clear"></div>
         </div>
     </div>
 </main>
+
+   <!-- Inicio do Modal-->
+<div class="modal fade" id="modalPesquisa">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal--title">Encontre um aluno</h5>
+                <button type="button" class="close" data-dismiss="modal">
+                    <span>&times;</span>
+                </button>
+            </div>
+            <form method="post" action="pesquisarAluno" th:object="${aluno}">
+                <div class="modal-body">
+                    <input type="text" th:field="*{nome}" class="form-control" placeholder="Digite o nome do aluno...">
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-outline-dark" data-dismiss="modal">Fechar</button>
+                    <button type="submit" class="btn btn-primary" >Pesquisar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 
 <div th:replace="fragmentos/fragmentos :: rodape"></div>
 

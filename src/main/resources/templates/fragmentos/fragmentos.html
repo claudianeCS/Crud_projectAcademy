@@ -22,8 +22,8 @@
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navMobile">
       <div class="navbar-nav justify-content-end">
-        <a class="nav-item nav-link text-dark" href="#"><i class="fas fa-home"></i> Home</a>
-        <a class="nav-item nav-link text-dark" href="#"><i class="fas fa-user-graduate"></i> Pesquisar Alunos</a>
+        <a class="nav-item nav-link text-dark" th:href="@{/}"><i class="fas fa-home"></i> Home</a>
+        <a class="nav-item nav-link text-dark" th:href="@{filtrarAlunos}"><i class="fas fa-user-graduate"></i> Pesquisar Alunos</a>
         <a class="nav-item nav-link text-dark" th:href="@{inserirAluno}"><i class="fas fa-search"></i> Cadastrar Alunos</a>
         <a class="nav-item nav-link text-danger" href="#"><i class="fas fa-times"></i> Sair</a>
       </div>
