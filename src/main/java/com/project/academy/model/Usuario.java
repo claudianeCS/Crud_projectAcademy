@@ -6,7 +6,6 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.Size;
 
 @Entity
-@Table(name = "usuario")
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -14,7 +13,7 @@ public class Usuario {
     @Email
     private String email;
     @Size(min = 3, max = 20, message = "Usuario deve conter entre 3 a 20 caracteres!")
-    private String usuario;
+    private String username;
     private String senha;
 
     public String getSenha() {
@@ -41,13 +40,11 @@ public class Usuario {
         this.email = email;
     }
 
-    public String getUsuario() {
-        return usuario;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
+    public void setUsername(String username) {
+        this.username = username;
     }
-
-
 }

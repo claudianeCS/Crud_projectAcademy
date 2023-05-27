@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/webjars/bootstrap/5.2.3/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/e2a2c1151e.js"></script>
+    <link rel="stylesheet" href="css/cadastro.css">
+    <title>Project Academy - Bem vindo</title>
+    <meta name="author" content="Claudiane Costa"/>
+</head>
+<body>
+
+<div class="login-form">
+    <div class="main-div">
+        <div class="container-head">
+            <div class="texto-head">
+                <h2>CADASTRO</h2>
+                <img src="/img/LOGO.png" alt="logo">
+            </div>
+            <p>Crie um registro de usuario no sistema.<p>
+        </div>
+
+        <form method="post" action="/salvarUsuario" th:object="${usuario}">
+            <div class="mb-3">
+                <input type="text" th:field="*{username}" class="form-control" placeholder="Username" aria-describedby="helpId" style="box-shadow: -5px 5px 16px -9px rgba(0,0,0,0.75);">
+            </div>
+            <div class="mb-3">
+                <input type="text" th:field="*{email}" class="form-control" placeholder="Email" aria-describedby="helpId" style="box-shadow: -5px 5px 16px -9px rgba(0,0,0,0.75);">
+            </div>
+            <div class="mb-3">
+                <input type="password" th:field="*{senha}" class="form-control" placeholder="Insira a senha" aria-describedby="helpId" style="box-shadow: -5px 5px 16px -9px rgba(0,0,0,0.75);">
+            </div>
+
+            <div class="cadastro">
+                <p>Ou conecte com sua conta: </p>
+                <div class="cadastro-logo">
+                    <img src="/img/social.png" alt="goo34g">
+                    <img src="/img/soci3al.png" alt="fa4ceok">
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-dark" style="margin-right: 10px;">Salvar</button>
+            <button type="button" class="btn btn-danger">Cancelar</button>
+        </form>
+    </div>
+</div>
+
+
+<div th:replace="fragmentos/fragmentos :: rodape"></div>
+<script src="js/application.js"></script>
+<script src="/webjars/jquery/3.6.4/jquery.min.js"></script>
+<script src="/webjars/bootstrap/5.2.3/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"  ></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" ></script>
+</body>
+</html>

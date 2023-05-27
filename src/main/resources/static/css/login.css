@@ -1,0 +1,81 @@
+@font-face{
+    font-family: 'Right Chalk';
+    src: url('Right Chalk.ttf') format('opentype');
+    font-weight: normal;
+    font-style:normal;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+body{
+    background-image: url("/img/textura-blackboard.jpg");
+}
+h2{
+    font-family: 'Right Chalk', Times, serif;
+}
+.login-form{
+    background-color: rgb(255, 255, 255);
+    width: 500px;
+    height: 50vh;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 170px;
+    left: 35%;
+}
+img{
+    width: 120px;
+    height: 40px;
+}
+.container-head{
+    margin-bottom: 25px;
+}
+.texto-head{
+    display: flex;
+    justify-content: space-between;
+    height: 5vh;
+    margin-bottom: 15px;
+}
+.cadastro{
+    margin-bottom: 25px;
+    margin-top: 25px;
+}
+
+.rodape{
+    background-color: #FFF;
+    color: black;
+    position: fixed;
+    width:100%;
+    bottom: 0;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+@media screen and (max-width: 667px) {
+    body{
+     background-image: none;
+    }
+    .rodape{
+        background-color: black;
+        color: #FFFFFF;
+    }
+    .login-form{
+        background-color: transparent;
+        width: 60%;
+        left: 20%;
+    }
+    .texto-head{
+        margin-bottom: 20px;
+    }
+    .container-head{
+        margin-bottom: 30px;
+    }
+
+}
